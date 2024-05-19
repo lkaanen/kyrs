@@ -1,0 +1,1142 @@
+{
+	"info": {
+		"_postman_id": "076985cf-361e-40b2-8e26-a6f0094d9996",
+		"name": "Курсовая",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29313477"
+	},
+	"item": [
+		{
+			"name": "Библиотекарь",
+			"item": [
+				{
+					"name": "Книги",
+					"item": [
+						{
+							"name": "Создание книги",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/selim/Downloads/default-book.jpg"
+										},
+										{
+											"key": "title",
+											"value": "Какая-то книга",
+											"type": "text"
+										},
+										{
+											"key": "authors[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "genres[]",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": "{{host}}/admin/books"
+							},
+							"response": []
+						},
+						{
+							"name": "Редактирование книги",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "multipart",
+										"value": "form-data",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": "{{host}}/admin/books/34"
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление книги",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/books/34"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Авторы",
+					"item": [
+						{
+							"name": "Создание автора",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "full_name",
+											"value": "Kitsunaana",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": "{{host}}/admin/authors"
+							},
+							"response": []
+						},
+						{
+							"name": "Редактирование автора",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": "{{host}}/admin/authors/15"
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление автора",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/authors/15"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Жанры",
+					"item": [
+						{
+							"name": "Создание жанра",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Этти\",\r\n    \"description\": \"Прчичина, по которой у кого-то не работает сайт)\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admin/genres"
+							},
+							"response": []
+						},
+						{
+							"name": "Редактирование жанра",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Интересный жанр\",\r\n    \"title\": \"И не менее интересный жанр\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admin/genres/19"
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление жанра",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/genres/19"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Читатели",
+					"item": [
+						{
+							"name": "Создание читателя",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "kits4@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "AlgebraDura14!",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/readers"
+							},
+							"response": []
+						},
+						{
+							"name": "Редактирование читателя",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"asdыыss@email.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admin/readers/26"
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление читателя",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/readers/26"
+							},
+							"response": []
+						},
+						{
+							"name": "Получение всех читателей",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/admin/readers"
+							},
+							"response": []
+						},
+						{
+							"name": "Пагинация по читателям",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/readers?per_page=1&page=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"readers"
+									],
+									"query": [
+										{
+											"key": "per_page",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Сортировка читателей",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/readers?order=created_at&direction=desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"readers"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "created_at"
+										},
+										{
+											"key": "direction",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Поиск по читателям",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/readers?search=kit",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"readers"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "kit"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение одного читателя",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/admin/readers/7"
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Администратор",
+			"item": [
+				{
+					"name": "Библиотекари",
+					"item": [
+						{
+							"name": "Создание библиотекаря",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "kit4@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "AlgebraDura14!",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/librarians"
+							},
+							"response": []
+						},
+						{
+							"name": "Редактирование библиотекаря",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"asdыыss@email.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/admin/librarians/22"
+							},
+							"response": []
+						},
+						{
+							"name": "Удаление библиотекаря",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{host}}/admin/librarians/22"
+							},
+							"response": []
+						},
+						{
+							"name": "Получение всех библиотекарей",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/admin/librarians"
+							},
+							"response": []
+						},
+						{
+							"name": "Пагинация по библиотекарям",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/librarians?per_page=4&page=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"librarians"
+									],
+									"query": [
+										{
+											"key": "per_page",
+											"value": "4"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Сортировка библиотекарей",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/librarians?order=created_at&direction=desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"librarians"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "created_at"
+										},
+										{
+											"key": "direction",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Поиск по библиотекарям",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/admin/librarians?search=kit",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"admin",
+										"librarians"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "kit"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение одного библиотекаря",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/admin/librarians/13"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Гость",
+			"item": [
+				{
+					"name": "Регистрация",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"kitsunaanas@gmail.com\",\r\n    \"password\": \"AlgebraDura14!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/auth/users/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json()\r",
+									"\r",
+									"pm.collectionVariables.set(\"token\", jsonData.access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"uriah40@example.com\",\r\n    \"password\": \"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{host}}/auth/users/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Для всех",
+			"item": [
+				{
+					"name": "Книги",
+					"item": [
+						{
+							"name": "Получение всех книг",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/books"
+							},
+							"response": []
+						},
+						{
+							"name": "Пагинация по книгам",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/books?page=2&per_page=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "per_page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Фильтрация книг",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/books?authors[]=1&authors[]=2&authors[]=3&genres[]=1&genres[]=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "authors[]",
+											"value": "1"
+										},
+										{
+											"key": "authors[]",
+											"value": "2"
+										},
+										{
+											"key": "authors[]",
+											"value": "3"
+										},
+										{
+											"key": "genres[]",
+											"value": "1"
+										},
+										{
+											"key": "genres[]",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Поиск по книгам",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/books?authors[]=1&authors[]=2&authors[]=3&is_visible=1&genres[]=3&search=Преступление",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "authors[]",
+											"value": "1"
+										},
+										{
+											"key": "authors[]",
+											"value": "2"
+										},
+										{
+											"key": "authors[]",
+											"value": "3"
+										},
+										{
+											"key": "is_visible",
+											"value": "1"
+										},
+										{
+											"key": "genres[]",
+											"value": "3"
+										},
+										{
+											"key": "search",
+											"value": "Преступление"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Сортировка книг",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{host}}/books?is_visible=1&order=downloads&direction=desc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "authors[]",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "authors[]",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "authors[]",
+											"value": "3",
+											"disabled": true
+										},
+										{
+											"key": "is_visible",
+											"value": "1"
+										},
+										{
+											"key": "order",
+											"value": "downloads"
+										},
+										{
+											"key": "direction",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение одной книги",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/books/4"
+							},
+							"response": []
+						}
+					],
+					"description": "Запросы для получения книг доступные всем пользователям"
+				},
+				{
+					"name": "Автор",
+					"item": [
+						{
+							"name": "Получение одного",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{host}}/authors/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Получение всех авторов",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/authors"
+							},
+							"response": []
+						},
+						{
+							"name": "Пагинация",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/authors?per_page=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"authors"
+									],
+									"query": [
+										{
+											"key": "per_page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Поиск авторов по значению",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/authors?search=Уэйс&place=full_name",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"authors"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Уэйс"
+										},
+										{
+											"key": "place",
+											"value": "full_name"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Сортировка авторов по значению",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/authors?order=updated_at&direction=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"authors"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "updated_at"
+										},
+										{
+											"key": "direction",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Жанры",
+					"item": [
+						{
+							"name": "Получение всех жанров",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/genres"
+							},
+							"response": []
+						},
+						{
+							"name": "Пагинация",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/genres?page=3&per_page=3",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"genres"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "3"
+										},
+										{
+											"key": "per_page",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Поиск жанров по значению",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/genres?search=Фантастика",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"genres"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Фантастика"
+										},
+										{
+											"key": "place",
+											"value": "description",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Сортировка жанров",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/genres?order=title&direction=asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"genres"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "title"
+										},
+										{
+											"key": "direction",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Получение одного жанра",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{host}}/genres/8"
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "эндпоинты доступные для всех пользователей независимо от их роли",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Авторизованный пользователь",
+			"item": [
+				{
+					"name": "О пользователе",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}/me"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Читатель",
+			"item": [
+				{
+					"name": "Скачивание книги",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{host}}/books/download-pdf/default-661c55a485b74.pdf"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
